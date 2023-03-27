@@ -1,0 +1,28 @@
+id: svn-directory
+
+info:
+  name: SVN Directory
+  author: Your Name
+  severity: high
+  
+rules:
+- id: svn-check
+  type: path
+  path:
+    - "/.svn/"
+  opts:
+    recursive: true
+    file_extensions:
+      - ""
+
+queries:
+- id: svn-query
+  info:
+    name: SVN Directory Check
+    description: Check for the presence of .svn directory
+  severity: high
+  tags:
+    - svn
+  query:
+    - svn-check
+
